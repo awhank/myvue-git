@@ -11,6 +11,15 @@
         <h1>{{name}}</h1>
     </div>
 
+    <div id="app2">
+        <span v-once>Message: {{msg}}</span>
+    </div>
+
+    <div id="example">
+        <p>Original Message: "{{message}}"</p>
+        <p>Computer Reversed message: "{{reversedMessage}}"</p>
+    </div>
+
     <script>
         var app = new Vue({
             el: '#app',
@@ -18,6 +27,29 @@
                 name: "NIOMIC"
             }
         });
+    </script>
+
+    <script>
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                msg: 'Belajar VueJS'
+            }
+        })
+    </script>
+
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                message: 'NIOMIC INDONESIA'
+            },
+            computed: {
+                reversedMessage: function() {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
     </script>
 </body>
 </html>
