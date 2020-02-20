@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS Instances</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.1.1/dist/vue-router.js"></script>
+</head>
+<body>
+    
+    <div id="databinding">
+        
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#databinding'
+        });
+
+        var myMixins = {
+            created: function(){
+                this.startmixins()
+            },
+            method: {
+                startmixins: function(){
+                    alert("Welcome to mixin eample");
+                }
+            }
+        };
+
+        vue Component = Vue.extend({
+            mixins:[myMixins   ]
+        })
+    </script>
+</body>
+</html>

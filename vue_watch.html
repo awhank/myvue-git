@@ -21,13 +21,11 @@
             },
             watch: {
                 kilometers: function(val){
-                    console.log(val);
                     this.kilometers = val;
                     this.meters = val * 1000;
                 },
 
-                meters : function(val){
-                    console.log(val);
+                meters : function(val){ 
                     this.kilometers = val / 1000;
                     this.meters = val;
                 }

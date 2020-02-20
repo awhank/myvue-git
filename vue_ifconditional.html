@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="databinding">
+        <button v-on:click="showdata" v-bind:style="styleobj">Click Me</button>
+        <span style="font-size: px;"><b>{{show}}</b></span>
+        <h1 v-if = "show">This is h1 Tag</h1>
+        <h2 v-else>This is h2 tag</h2>
+
+        <div v-show="show">
+            <b>V-Show:</b>
+            <img src="images/icon.png" alt="">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#databinding',
+            data: {
+                show: true,
+                styleobj: {
+                    backgroundColor: '#2196f3!important',
+                    cursor: 'pointer',
+                    padding: '8px 16px',
+                    verticalAlign: 'middle'
+                }
+            },
+            methods: {
+                showdata: function(e){
+                    this.show=!this.show;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
